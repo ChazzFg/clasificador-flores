@@ -43,7 +43,8 @@ uploaded_file = st.file_uploader("📷 Sube una imagen", type=["jpg", "jpeg", "p
 
 if uploaded_file is not None:
     image = Image.open(uploaded_file).convert("RGB")
-    st.image(image, caption='Imagen subida', use_column_width=True)
+    st.image(image, caption='Imagen subida', use_container_width=True)
+
 
     # Preprocesar imagen
     img_tensor = transform(image).unsqueeze(0)  # batch dimension
